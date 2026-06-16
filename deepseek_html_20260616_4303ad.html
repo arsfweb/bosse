@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bosse Centro Automotivo - Climatização, Mecânica e Elétrica</title>
+  
+  <!-- Fontes Profissionais: Inter e Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Configurações de Cores Personalizadas do Design -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              50: '#f4f6fa',
+              100: '#e8ebf5',
+              200: '#cdd4e9',
+              300: '#a2add6',
+              400: '#7181c0',
+              500: '#4e5fa9',
+              600: '#3b4b91',
+              700: '#1e285a',
+              800: '#101638',
+              900: '#0a0d24',
+              950: '#040511',
+            },
+            accent: {
+              blue: '#0ea5e9',
+              sky: '#38bdf8',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Estilos adicionais para mobile -->
+  <style>
+    /* Esconde scrollbars mas mantém funcionalidade */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    /* Animações suaves */
+    .fade-in {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Melhor toque em mobile */
+    .tap-highlight-none {
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Accordion suave */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .accordion-content.open {
+      max-height: 500px;
+    }
+  </style>
+</head>
+<body class="bg-white text-navy-900 font-sans selection:bg-accent-blue/20 selection:text-navy-950">
+
+  <!-- ================= 1. BANNER DO TOPO (OTIMIZADO MOBILE) ================= -->
+  <div id="top-banner" class="bg-white border-b-4 border-navy-100 shadow-md w-full">
+    <a href="https://wa.me/5547996087334?text=Olá!%20Visitei%20o%20site%20da%20Bosse%20e%20gostaria%20de%20solicitar%20um%20orçamento" target="_blank" rel="noopener noreferrer" class="block group relative overflow-hidden focus:outline-none w-full">
+      <img src="banner.png" alt="Centro Automotivo Bosse - Banner Oficial" onerror="this.style.display='none'; document.getElementById('fallback-banner').classList.remove('hidden');" class="w-full h-auto block select-none transition-all duration-300 group-hover:brightness-95 object-cover bg-white">
+    </a>
+  </div>
+
+  <!-- BANNER ALTERNATIVO (Mobile First) -->
+  <div id="fallback-banner" class="hidden bg-white text-navy-900 overflow-hidden border-b-4 border-navy-100 shadow-md">
+    <div class="max-w-7xl mx-auto px-3 py-3 flex flex-col items-center gap-3 text-center">
+      <!-- Logo compacta -->
+      <div class="flex items-center gap-3 shrink-0">
+        <div class="relative w-12 h-12 flex items-center justify-center bg-navy-900 text-white rounded-2xl p-2.5 shadow-md">
+          <i data-lucide="wrench" class="w-6 h-6 text-accent-sky"></i>
+        </div>
+        <div class="text-left">
+          <span class="font-display text-[8px] font-bold tracking-[0.2em] text-navy-500 leading-none block uppercase">CENTRO AUTOMOTIVO</span>
+          <span class="font-display text-2xl font-black italic tracking-tight text-navy-900 leading-none my-0.5 uppercase block">BOSSE</span>
+        </div>
+      </div>
+      
+      <!-- Serviços em grid compacto -->
+      <div class="grid grid-cols-4 gap-1 w-full text-center">
+        <span class="flex items-center justify-center gap-1 font-display text-[9px] font-black text-navy-800 bg-navy-50 rounded-lg px-1.5 py-1"><i data-lucide="snowflake" class="w-3 h-3 text-accent-blue"></i> AR</span>
+        <span class="flex items-center justify-center gap-1 font-display text-[9px] font-black text-navy-800 bg-navy-50 rounded-lg px-1.5 py-1"><i data-lucide="zap" class="w-3 h-3 text-amber-500"></i> ELÉT</span>
+        <span class="flex items-center justify-center gap-1 font-display text-[9px] font-black text-navy-800 bg-navy-50 rounded-lg px-1.5 py-1"><i data-lucide="wrench" class="w-3 h-3 text-navy-600"></i> MEC</span>
+        <span class="flex items-center justify-center gap-1 font-display text-[9px] font-black text-navy-800 bg-navy-50 rounded-lg px-1.5 py-1"><i data-lucide="compass" class="w-3 h-3 text-indigo-500 rotate-45"></i> SUSP</span>
+      </div>
+      
+      <!-- Botão WhatsApp compacto -->
+      <a href="https://wa.me/5547996087334" target="_blank" class="flex items-center gap-2 bg-navy-900 text-white px-4 py-2 rounded-xl hover:bg-navy-800 transition-all w-full justify-center text-sm">
+        <i data-lucide="phone" class="w-4 h-4 text-accent-sky"></i>
+        <span class="font-bold">(47) 99608-7334</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ================= 2. MENUBAR ESTÁTICO (MOBILE OTIMIZADO) ================= -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-navy-100/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-3 py-2 flex items-center justify-between">
+      <div class="flex items-center gap-2 text-[10px]">
+        <span class="hidden xs:inline-flex items-center gap-1 font-mono text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded-md font-bold">
+          <i data-lucide="badge-check" class="w-3 h-3 text-emerald-500"></i> Profissional Líder SC
+        </span>
+        <span class="inline-flex items-center gap-1 font-semibold text-navy-600 text-[10px]">
+          ★ 4.8 / 5.0
+        </span>
+      </div>
+      <nav class="flex items-center gap-0.5 text-[10px] font-display font-extrabold text-navy-500 overflow-x-auto hide-scrollbar">
+        <a href="#inicio" class="px-2 py-1.5 rounded-lg hover:text-navy-900 transition-colors whitespace-nowrap">Início</a>
+        <a href="#servicos" class="px-2 py-1.5 rounded-lg hover:text-navy-900 transition-colors whitespace-nowrap">Serviços</a>
+        <a href="#avaliacoes" class="px-2 py-1.5 rounded-lg hover:text-navy-900 transition-colors whitespace-nowrap">Opiniões</a>
+        <a href="#agendar" class="px-2 py-1.5 rounded-lg hover:text-navy-900 transition-colors whitespace-nowrap">Agendar</a>
+        <a href="#localizacao" class="hidden sm:inline-block px-2 py-1.5 rounded-lg hover:text-navy-900 transition-colors whitespace-nowrap">Onde Fica</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= 3. SEÇÃO HERO (MOBILE OTIMIZADO) ================= -->
+  <section id="inicio" class="relative bg-navy-950 text-white overflow-hidden py-12 md:py-24">
+    <div class="absolute inset-0 z-0 bg-gradient-to-r from-navy-950 via-navy-900/90 to-navy-950/40"></div>
+    <div class="absolute right-0 bottom-0 top-0 w-1/2 bg-[radial-gradient(circle_at_right,_var(--tw-gradient-stops))] from-accent-blue/15 via-transparent to-transparent pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
+      <!-- Coluna Esquerda -->
+      <div class="lg:col-span-7 space-y-5">
+        <div class="flex flex-wrap gap-2 items-center">
+          <div class="inline-flex items-center gap-1 bg-sky-500/10 text-accent-sky rounded-full px-3 py-1 text-[10px] font-semibold border border-sky-500/20">
+            <i data-lucide="map-pin" class="w-3 h-3"></i>
+            <span>São Domingos, Navegantes - SC</span>
+          </div>
+        </div>
+
+        <h1 class="font-display text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
+          Especialistas em Ar <span class="bg-gradient-to-r from-accent-sky to-accent-blue bg-clip-text text-transparent">Condicionado</span>
+        </h1>
+
+        <p class="text-sm md:text-lg text-gray-300 font-sans leading-relaxed">
+          <strong>Honestidade mecânica irredutível:</strong> mostramos o defeito real e só trocamos com sua autorização.
+        </p>
+
+        <!-- Pilares (versão mobile mais compacta) -->
+        <div class="grid grid-cols-2 gap-3 pt-1">
+          <div class="flex items-start gap-2">
+            <div class="bg-accent-blue/15 p-1 rounded-md text-accent-sky shrink-0 mt-0.5">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-xs text-white">Sem Peças Desnecessárias</h4>
+              <p class="text-[10px] text-gray-400">Só trocamos com sua autorização</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-2">
+            <div class="bg-accent-blue/15 p-1 rounded-md text-accent-sky shrink-0 mt-0.5">
+              <i data-lucide="snowflake" class="w-3.5 h-3.5"></i>
+            </div>
+            <div>
+              <h4 class="font-display font-bold text-xs text-white">Recarga de Elite</h4>
+              <p class="text-[10px] text-gray-400">Ar super resfriado e higienizado</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botões de Ação (mobile empilhados) -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a href="https://wa.me/5547996087334?text=Olá!%20Gostaria%20de%20agendar%20uma%20avaliação%20para%20o%20ar%20condicionado/mecânica%20do%20meu%20veículo." target="_blank" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-accent-blue to-blue-600 hover:from-accent-sky hover:to-accent-blue text-white shadow-lg shadow-accent-blue/20 rounded-xl px-5 py-3 font-bold transition-all text-sm">
+            <i data-lucide="message-square" class="w-4 h-4"></i>
+            WhatsApp
+          </a>
+          <a href="#servicos" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white rounded-xl px-5 py-3 font-bold border border-white/10 transition-colors text-sm">
+            Serviços
+            <i data-lucide="arrow-right" class="w-4 h-4 text-accent-sky"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna Direita: Destaque (mobile: escondido em telas menores) -->
+      <div class="hidden lg:block lg:col-span-5 bg-navy-900/80 backdrop-blur-md rounded-3xl border border-navy-800 p-6 space-y-4 relative">
+        <div class="absolute -top-3 -right-3 bg-accent-sky text-navy-950 font-display font-black text-[10px] tracking-wider px-3 py-1 rounded-full shadow-md">
+          RECOMENDADO
+        </div>
+        <div class="border-b border-navy-800 pb-3">
+          <h3 class="font-display font-bold text-lg text-white">Destaque por Honestidade</h3>
+        </div>
+        <div class="space-y-3">
+          <div class="flex text-amber-400 gap-0.5 text-sm">★ ★ ★ ★ ★</div>
+          <p class="font-sans text-sm text-gray-300 italic leading-relaxed">
+            "Atendimento excelente, profissional de primeira linha! Finalmente um ponto final nos probleminhas!"
+          </p>
+          <div class="flex items-center gap-3 pt-1">
+            <div class="w-9 h-9 rounded-full bg-accent-blue/25 text-accent-sky flex items-center justify-center font-bold text-xs">DS</div>
+            <div>
+              <h5 class="font-display font-bold text-xs text-white">Daniela Scathach</h5>
+              <p class="text-[9px] text-gray-400">Google Maps</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. SEÇÃO DE SERVIÇOS (MOBILE OTIMIZADO) ================= -->
+  <section id="servicos" class="py-12 md:py-24 bg-navy-50 text-navy-900">
+    <div class="max-w-7xl mx-auto px-4">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="font-mono text-[10px] font-black tracking-widest text-accent-blue bg-accent-blue/10 px-3 py-1 rounded-full uppercase">
+          Especialidades Técnicas
+        </span>
+        <h2 class="font-display text-2xl md:text-4xl font-extrabold text-navy-900 mt-3 tracking-tight">
+          Nossos Serviços
+        </h2>
+      </div>
+
+      <!-- Mobile: Cards expansíveis (accordion) -->
+      <div class="space-y-3 md:hidden">
+        <!-- Card AR -->
+        <div class="bg-white rounded-2xl border border-navy-100 overflow-hidden shadow-sm">
+          <button onclick="toggleServiceMobile('ar-mobile')" class="w-full p-4 text-left flex items-center justify-between tap-highlight-none">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-navy-900 text-white flex items-center justify-center"><i data-lucide="snowflake" class="w-5 h-5"></i></div>
+              <div>
+                <h4 class="font-display font-extrabold text-sm text-navy-900">Ar Condicionado</h4>
+                <p class="text-[10px] text-gray-500">Carga, higienização, compressor</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" id="chevron-ar-mobile" class="w-5 h-5 text-navy-400 transition-transform"></i>
+          </button>
+          <div id="content-ar-mobile" class="accordion-content px-4 pb-4">
+            <p class="text-sm text-gray-600 leading-relaxed">Recarga de gás ecológico, detecção de micro-vazamentos com UV, higienização com ozônio.</p>
+            <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
+              <div class="bg-red-50/50 rounded-xl p-3 border border-red-100/50">
+                <span class="font-bold text-red-700">⚠️ Fique Alerta:</span>
+                <ul class="mt-1 space-y-1 text-red-950">
+                  <li>• Ar demora para gelar</li>
+                  <li>• Ruído no compressor</li>
+                  <li>• Odores no duto</li>
+                </ul>
+              </div>
+              <div class="bg-sky-50/40 rounded-xl p-3 border border-sky-100/50">
+                <span class="font-bold text-navy-800">✅ Inclusos:</span>
+                <ul class="mt-1 space-y-1 text-navy-950">
+                  <li>• Vácuo profundo</li>
+                  <li>• Óleo de compressor</li>
+                  <li>• Filtros novos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card ELÉTRICA -->
+        <div class="bg-white rounded-2xl border border-navy-100 overflow-hidden shadow-sm">
+          <button onclick="toggleServiceMobile('eletrica-mobile')" class="w-full p-4 text-left flex items-center justify-between tap-highlight-none">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center"><i data-lucide="zap" class="w-5 h-5"></i></div>
+              <div>
+                <h4 class="font-display font-extrabold text-sm text-navy-900">Elétrica Automotiva</h4>
+                <p class="text-[10px] text-gray-500">Bateria, sensores, iluminação</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" id="chevron-eletrica-mobile" class="w-5 h-5 text-navy-400 transition-transform"></i>
+          </button>
+          <div id="content-eletrica-mobile" class="accordion-content px-4 pb-4">
+            <p class="text-sm text-gray-600 leading-relaxed">Diagnóstico de alternadores, chicotes, testes de bateria e reparo de motor de arranque.</p>
+            <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
+              <div class="bg-red-50/50 rounded-xl p-3 border border-red-100/50">
+                <span class="font-bold text-red-700">⚠️ Fique Alerta:</span>
+                <ul class="mt-1 space-y-1 text-red-950">
+                  <li>• Luz da bateria acesa</li>
+                  <li>• Perda de carga</li>
+                  <li>• Faróis oscilando</li>
+                </ul>
+              </div>
+              <div class="bg-sky-50/40 rounded-xl p-3 border border-sky-100/50">
+                <span class="font-bold text-navy-800">✅ Inclusos:</span>
+                <ul class="mt-1 space-y-1 text-navy-950">
+                  <li>• Scanner global</li>
+                  <li>• Teste de dreno</li>
+                  <li>• Reparo de chicotes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card MECÂNICA -->
+        <div class="bg-white rounded-2xl border border-navy-100 overflow-hidden shadow-sm">
+          <button onclick="toggleServiceMobile('mecanica-mobile')" class="w-full p-4 text-left flex items-center justify-between tap-highlight-none">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-navy-700 flex items-center justify-center"><i data-lucide="wrench" class="w-5 h-5"></i></div>
+              <div>
+                <h4 class="font-display font-extrabold text-sm text-navy-900">Mecânica Geral</h4>
+                <p class="text-[10px] text-gray-500">Freios, motores, injeção</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" id="chevron-mecanica-mobile" class="w-5 h-5 text-navy-400 transition-transform"></i>
+          </button>
+          <div id="content-mecanica-mobile" class="accordion-content px-4 pb-4">
+            <p class="text-sm text-gray-600 leading-relaxed">Revisões periódicas, correias dentadas, sistemas de freio, troca de óleo e injeção eletrônica.</p>
+            <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
+              <div class="bg-red-50/50 rounded-xl p-3 border border-red-100/50">
+                <span class="font-bold text-red-700">⚠️ Fique Alerta:</span>
+                <ul class="mt-1 space-y-1 text-red-950">
+                  <li>• Pedal de freio baixo</li>
+                  <li>• Luz de motor acesa</li>
+                  <li>• Manchas no assoalho</li>
+                </ul>
+              </div>
+              <div class="bg-sky-50/40 rounded-xl p-3 border border-sky-100/50">
+                <span class="font-bold text-navy-800">✅ Inclusos:</span>
+                <ul class="mt-1 space-y-1 text-navy-950">
+                  <li>• Filtros de óleo/motor</li>
+                  <li>• Freios de alta marca</li>
+                  <li>• Correia dentada</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card SUSPENSÃO -->
+        <div class="bg-white rounded-2xl border border-navy-100 overflow-hidden shadow-sm">
+          <button onclick="toggleServiceMobile('suspensao-mobile')" class="w-full p-4 text-left flex items-center justify-between tap-highlight-none">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center"><i data-lucide="compass" class="w-5 h-5 rotate-45"></i></div>
+              <div>
+                <h4 class="font-display font-extrabold text-sm text-navy-900">Suspensão e Direção</h4>
+                <p class="text-[10px] text-gray-500">Amortecedores, pivôs, buchas</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" id="chevron-suspensao-mobile" class="w-5 h-5 text-navy-400 transition-transform"></i>
+          </button>
+          <div id="content-suspensao-mobile" class="accordion-content px-4 pb-4">
+            <p class="text-sm text-gray-600 leading-relaxed">Substituição de amortecedores, buchas, pivôs, terminais de direção e rolamentos.</p>
+            <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
+              <div class="bg-red-50/50 rounded-xl p-3 border border-red-100/50">
+                <span class="font-bold text-red-700">⚠️ Fique Alerta:</span>
+                <ul class="mt-1 space-y-1 text-red-950">
+                  <li>• Ruídos em lombadas</li>
+                  <li>• Direção instável</li>
+                  <li>• Pneus desgastados</li>
+                </ul>
+              </div>
+              <div class="bg-sky-50/40 rounded-xl p-3 border border-sky-100/50">
+                <span class="font-bold text-navy-800">✅ Inclusos:</span>
+                <ul class="mt-1 space-y-1 text-navy-950">
+                  <li>• Inspeção em elevador</li>
+                  <li>• Amortecedores novos</li>
+                  <li>• Bandejas e esferas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop: Abas interativas (mantido) -->
+      <div class="hidden md:grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-5 space-y-3">
+          <h3 class="font-display font-bold text-xs text-navy-500 uppercase tracking-widest text-left pl-1 mb-2">Clique para ver os detalhes:</h3>
+          <div id="service-tabs" class="space-y-3">
+            <button onclick="switchService('ar')" id="tab-ar" class="tab-btn w-full text-left p-5 rounded-2xl transition-all duration-300 flex items-center justify-between border bg-white border-accent-blue/30 shadow-md ring-2 ring-accent-blue/10 translate-x-1.5">
+              <div class="flex items-center gap-4">
+                <div class="tab-icon-box w-12 h-12 rounded-xl flex items-center justify-center bg-navy-900 text-white transition-all"><i data-lucide="snowflake" class="w-6 h-6"></i></div>
+                <div>
+                  <h4 class="font-display font-extrabold text-base text-navy-900">Ar Condicionado</h4>
+                  <p class="text-xs text-gray-500 mt-1">Carga de gás ecológica, higienização, reparo no compressor.</p>
+                </div>
+              </div>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-accent-blue"></i>
+            </button>
+            <button onclick="switchService('eletrica')" id="tab-eletrica" class="tab-btn w-full text-left p-5 rounded-2xl transition-all duration-300 flex items-center justify-between border bg-white/60 hover:bg-white border-navy-100">
+              <div class="flex items-center gap-4">
+                <div class="tab-icon-box w-12 h-12 rounded-xl flex items-center justify-center bg-navy-50 text-navy-700 transition-all"><i data-lucide="zap" class="w-6 h-6"></i></div>
+                <div>
+                  <h4 class="font-display font-extrabold text-base text-navy-900">Elétrica Automotiva</h4>
+                  <p class="text-xs text-gray-500 mt-1">Teste de bateria, alternadores, sensores e iluminação.</p>
+                </div>
+              </div>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-gray-300"></i>
+            </button>
+            <button onclick="switchService('mecanica')" id="tab-mecanica" class="tab-btn w-full text-left p-5 rounded-2xl transition-all duration-300 flex items-center justify-between border bg-white/60 hover:bg-white border-navy-100">
+              <div class="flex items-center gap-4">
+                <div class="tab-icon-box w-12 h-12 rounded-xl flex items-center justify-center bg-navy-50 text-navy-700 transition-all"><i data-lucide="wrench" class="w-6 h-6"></i></div>
+                <div>
+                  <h4 class="font-display font-extrabold text-base text-navy-900">Mecânica Geral</h4>
+                  <p class="text-xs text-gray-500 mt-1">Freios, motores, correia dentada, injeção eletrônica.</p>
+                </div>
+              </div>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-gray-300"></i>
+            </button>
+            <button onclick="switchService('suspensao')" id="tab-suspensao" class="tab-btn w-full text-left p-5 rounded-2xl transition-all duration-300 flex items-center justify-between border bg-white/60 hover:bg-white border-navy-100">
+              <div class="flex items-center gap-4">
+                <div class="tab-icon-box w-12 h-12 rounded-xl flex items-center justify-center bg-navy-50 text-navy-700 transition-all"><i data-lucide="compass" class="w-6 h-6 rotate-45"></i></div>
+                <div>
+                  <h4 class="font-display font-extrabold text-base text-navy-900">Suspensão e Direção</h4>
+                  <p class="text-xs text-gray-500 mt-1">Amortecedores, pivôs, buchas, caixa de direção.</p>
+                </div>
+              </div>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-gray-300"></i>
+            </button>
+          </div>
+        </div>
+        <div class="lg:col-span-7 bg-white rounded-3xl border border-navy-100 p-8 text-left shadow-lg relative min-h-[500px] flex flex-col justify-between">
+          <div id="service-details-content">
+            <div id="details-ar" class="service-detail-panel space-y-6">
+              <div class="flex items-center gap-3 pb-5 border-b border-navy-50">
+                <div class="w-12 h-12 rounded-2xl bg-accent-sky/10 text-accent-blue flex items-center justify-center p-2"><i data-lucide="snowflake" class="w-6 h-6"></i></div>
+                <div>
+                  <span class="font-mono text-[9px] font-black text-accent-blue tracking-wider block uppercase">ESPECIALIDADE CHAVE</span>
+                  <h3 class="font-display font-black text-xl md:text-2xl text-navy-900">Ar Condicionado Automotivo</h3>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <p class="text-sm text-gray-600 leading-relaxed font-sans">Seu ar condicionado parou de gelar? Realizamos rastreamento técnico completo: recarga de gás ecológico, detecção de micro-vazamentos com contraste UV, higienização com ozônio.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                  <div class="bg-red-50/50 rounded-xl p-4 border border-red-100/50 text-left">
+                    <span class="inline-flex items-center gap-1 text-xs font-mono font-bold text-red-700 uppercase mb-2"><i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> Fique Alerta:</span>
+                    <ul class="space-y-1.5 text-xs text-red-950 font-medium">
+                      <li>• Ar demora para render ou só gela no frio</li>
+                      <li>• Ruído áspero vindo do compressor</li>
+                      <li>• Odores de umidade no duto</li>
+                    </ul>
+                  </div>
+                  <div class="bg-sky-50/40 rounded-xl p-4 border border-sky-100/50 text-left">
+                    <span class="inline-flex items-center gap-1 text-xs font-mono font-bold text-navy-800 uppercase mb-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-blue"></i> Serviços Inclusos:</span>
+                    <ul class="space-y-1.5 text-xs text-navy-950 font-medium">
+                      <li>• Vácuo profundo e remoção de umidade</li>
+                      <li>• Aplicação de óleo de compressor</li>
+                      <li>• Substituição de filtro desidratador</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="details-eletrica" class="service-detail-panel hidden space-y-6">
+              <div class="flex items-center gap-3 pb-5 border-b border-navy-50">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center p-2"><i data-lucide="zap" class="w-6 h-6"></i></div>
+                <div>
+                  <span class="font-mono text-[9px] font-black text-amber-500 tracking-wider block uppercase">CONTROLE ELETRÔNICO</span>
+                  <h3 class="font-display font-black text-xl md:text-2xl text-navy-900">Elétrica Automotiva</h3>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <p class="text-sm text-gray-600 leading-relaxed font-sans">Diagnosticamos alternadores, inspecionamos chicotes elétricos, realizamos testes de bateria e reparamos motor de arranque e caixas de fusíveis.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                  <div class="bg-red-50/50 rounded-xl p-4 border border-red-100/50 text-left">
+                    <span class="inline-flex items-center gap-1 text-xs font-mono font-bold text-red-700 uppercase mb-2"><i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> Fique Alerta:</span>
+                    <ul class="space-y-1.5 text-xs text-red-950 font-medium">
+                      <li>• Luz vermelha da bateria ativada</li>
+                      <li>• Perda constante de carga</li>
+                      <li>• Painéis e faróis oscilando</li>
+                    </ul>
+                  </div>
+                  <div class="bg-sky-50/40 rounded-xl p-4 border border-sky-100/50 text-left">
+                    <span class="inline-flex items-center gap-1 text-xs font-mono font-bold text-navy-800 uppercase mb-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-blue"></i> Serviços Inclusos:</span>
+                    <ul class="space-y-1.5 text-xs text-navy-950 font-medium">
+                      <li>• Scanner de diagnóstico global</li>
+                      <li>• Teste de dreno (consumo em repouso)</li>
+                      <li>• Restauração de chicotes</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="details-mecanica" class="service-detail-panel hidden space-y-6">
+              <div class="flex items-center gap-3 pb-5 border-b border-navy-50">
+                <div class="w-12 h-12 rounded-2xl bg-sky-500/10 text-navy-700 flex items-center justify-center p-2"><i data-lucide="wrench" class="w-6 h-6"></i></div>
+                <div>
+                  <span class="font-mono text-[9px] font-black text-navy-600 tracking-wider block uppercase">FORÇA E SEGURANÇA</span>
+                  <h3 class="font-display font-black text-xl md:text-2xl text-navy-900">Mecânica Geral e Revisões</h3>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <p class="text-sm text-gray-600 leading-relaxed font-sans">Revisões periódicas: substituição de correias dentadas, sistemas de freios (discos, pastilhas e fluído), trocas de óleo e injeção eletrônica.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                  <div class="bg-red-50/50 rounded-xl p-4 border border-red-100/50 text-left">
+                    <span class="inline-flex items-center gap-1 text-xs font-mono font-bold text-red-700 uppercase mb-2"><i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> Fique Alerta:</span>
+                    <ul class="space-y-1.5 text-xs text-red-950 font-medium">
+                      <li>• Pedal de freio muito baixo ou ruidoso</li>
+                      <li>• Luz de motor / injeção acesa</li>
+                      <li>• Manchas sob o assoalho</li>
+                    </ul>
+                  </div>
+                  <div class="bg-sky-50/40 rounded-xl p-4 border border-sky-100/50 text-left">
+                    <span class="inline-flex items-center gap-1 text-xs font-mono font-bold text-navy-800 uppercase mb-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-blue"></i> Serviços Inclusos:</span>
+                    <ul class="space-y-1.5 text-xs text-navy-950 font-medium">
+                      <li>• Substituição de filtros de óleo/motor</li>
+                      <li>• Componentes de freio de alta marca</li>
+                      <li>• Troca de correia dentada preventiva</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="details-suspensao" class="service-detail-panel hidden space-y-6">
+              <div class="flex items-center gap-3 pb-5 border-b border-navy-50">
+                <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center p-2"><i data-lucide="compass" class="w-6 h-6 rotate-45"></i></div>
+                <div>
+                  <span class="font-mono text-[9px] font-black text-indigo-500 tracking-wider block uppercase">ESTABILIDADE</span>
+                  <h3 class="font-display font-black text-xl md:text-2xl text-navy-900">Suspensão e Direção</h3>
+                </div>
+              </div>
+              <div class="space-y-4">
+                <p class="text-sm text-gray-600 leading-relaxed font-sans">Substituição de amortecedores fadigados, buchas de bandeja, pivôs, terminais de direção e rolamentos de rodas.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                  <div class="bg-red-50/50 rounded-xl p-4 border border-red-100/50 text-left">
+                    <span class="inline-flex items-center gap-1 text-xs font-mono font-bold text-red-700 uppercase mb-2"><i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> Fique Alerta:</span>
+                    <ul class="space-y-1.5 text-xs text-red-950 font-medium">
+                      <li>• Ruídos metálicos em lombadas</li>
+                      <li>• Direção instável</li>
+                      <li>• Pneus desgastados irregularmente</li>
+                    </ul>
+                  </div>
+                  <div class="bg-sky-50/40 rounded-xl p-4 border border-sky-100/50 text-left">
+                    <span class="inline-flex items-center gap-1 text-xs font-mono font-bold text-navy-800 uppercase mb-2"><i data-lucide="check" class="w-3.5 h-3.5 text-accent-blue"></i> Serviços Inclusos:</span>
+                    <ul class="space-y-1.5 text-xs text-navy-950 font-medium">
+                      <li>• Inspeção em elevador de suspensão</li>
+                      <li>• Troca de amortecedores e molas</li>
+                      <li>• Substituição de bandejas e esferas</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-navy-50 pt-6 mt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-left">
+              <p class="text-xs text-gray-400">Atendimento a automóveis nacionais e importados</p>
+              <p class="font-display font-bold text-xs text-navy-800">Navegantes, Gravatá e Penha - SC</p>
+            </div>
+            <a id="service-cta-link" href="https://wa.me/5547996087334?text=Olá!%20Gostaria%20de%20solicitar%20um%20diagnóstico%20para%20o%20meu%20veículo." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl px-5 py-3.5 transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              Consultar via WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. SEÇÃO DE OPINIÕES (MOBILE OTIMIZADO) ================= -->
+  <section id="avaliacoes" class="py-12 md:py-24 bg-white text-navy-900">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div class="text-left max-w-2xl">
+          <span class="font-mono text-[10px] font-black tracking-widest text-accent-blue bg-accent-blue/10 px-3 py-1 rounded-full uppercase">
+            A VOZ DOS CLIENTES
+          </span>
+          <h2 class="font-display text-2xl md:text-4xl font-extrabold text-navy-900 mt-3 tracking-tight">
+            Nossas Avaliações
+          </h2>
+        </div>
+        <div class="bg-navy-50 border border-navy-100 rounded-2xl p-4 shrink-0 flex items-center gap-4 text-left w-full md:w-auto">
+          <div class="text-center">
+            <span class="block font-display text-3xl font-black text-navy-900 leading-none">4.8</span>
+            <span class="bg-amber-400 text-navy-950 text-[9px] uppercase font-black tracking-wider px-2 py-0.5 rounded-md mt-1 inline-block">Excelente</span>
+          </div>
+          <div>
+            <div class="flex text-amber-500 text-xs">★ ★ ★ ★ ★</div>
+            <p class="text-[10px] text-gray-500 mt-1 font-semibold">23 avaliações</p>
+            <button onclick="toggleReviewForm()" class="inline-flex items-center gap-1 text-[10px] font-bold text-accent-blue hover:text-navy-900 transition-colors mt-0.5 cursor-pointer">
+              <i data-lucide="plus-circle" class="w-3 h-3"></i> Avaliar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="add-review-wrapper" class="hidden mb-10 bg-navy-50 rounded-2xl border border-navy-100 p-4 max-w-xl mx-auto text-left transition-all">
+        <h3 class="font-display font-bold text-sm text-navy-900 flex items-center gap-2 mb-3">
+          <i data-lucide="smile" class="w-4 h-4 text-accent-blue"></i> Deixe Sua Avaliação
+        </h3>
+        <form onsubmit="submitLocalReview(event)" class="space-y-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[10px] font-bold text-gray-700 mb-1" for="rev-author">Seu Nome:</label>
+              <input type="text" id="rev-author" placeholder="Ex: Claudinei" required class="w-full bg-white border border-gray-250 rounded-xl px-3 py-2 text-sm text-navy-950 focus:ring-2 focus:ring-accent-blue/30 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-[10px] font-bold text-gray-700 mb-1" for="rev-role">Seu Carro:</label>
+              <input type="text" id="rev-role" placeholder="Ex: Renegade Diesel" required class="w-full bg-white border border-gray-250 rounded-xl px-3 py-2 text-sm text-navy-950 focus:ring-2 focus:ring-accent-blue/30 focus:outline-none">
+            </div>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-gray-700 mb-1">Nota:</label>
+            <select id="rev-stars" class="bg-white border border-gray-250 rounded-xl px-3 py-2 text-sm text-navy-950 focus:outline-none w-full sm:w-auto">
+              <option value="5">★★★★★ (Excelente)</option>
+              <option value="4">★★★★ (Bom)</option>
+              <option value="3">★★★ (Regular)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold text-gray-700 mb-1" for="rev-text">Sua Opinião:</label>
+            <textarea id="rev-text" rows="2" placeholder="O que achou do atendimento..." required class="w-full bg-white border border-gray-250 rounded-xl px-3 py-2 text-sm text-navy-950 focus:ring-2 focus:ring-accent-blue/30 focus:outline-none"></textarea>
+          </div>
+          <div class="flex justify-end gap-3 pt-1">
+            <button type="button" onclick="toggleReviewForm()" class="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold px-4 py-2 rounded-lg">Cancelar</button>
+            <button type="submit" class="bg-navy-900 hover:bg-navy-800 text-white text-xs font-bold px-5 py-2.5 rounded-lg">Publicar</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-navy-50/50 rounded-2xl border border-navy-100 p-4 text-left flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+              <span class="font-mono text-[9px] text-gray-400">9 meses atrás</span>
+            </div>
+            <p class="text-xs text-gray-700 leading-relaxed">"Ótimo profissional, avaliação do defeito e correção fantásticos. Podem levar sem medo de ser enganado, só troca a peça se realmente precisar."</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-navy-100">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-navy-900 text-white font-display font-medium text-[10px] flex items-center justify-center">CD</div>
+              <div>
+                <h4 class="font-display font-bold text-xs text-navy-950">Claudinei Nilton Duarte</h4>
+                <span class="text-[8px] font-mono text-accent-sky bg-navy-900 px-1.5 py-0.5 rounded font-black inline-block mt-0.5">Cliente Garantido</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-navy-50/50 rounded-2xl border border-navy-100 p-4 text-left flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+              <span class="font-mono text-[9px] text-gray-400">1 ano atrás</span>
+            </div>
+            <p class="text-xs text-gray-700 leading-relaxed">"Atendimento excelente, profissional de primeira linha! Estava com meu carro fazendo tour em vários profissionais, gastando horrores com problemas recorrentes."</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-navy-100">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-navy-900 text-white font-display font-medium text-[10px] flex items-center justify-center">DS</div>
+              <div>
+                <h4 class="font-display font-bold text-xs text-navy-950">Daniela Scathach</h4>
+                <span class="text-[8px] font-mono text-accent-sky bg-navy-900 px-1.5 py-0.5 rounded font-black inline-block mt-0.5">Local Guide</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-navy-50/50 rounded-2xl border border-navy-100 p-4 text-left flex flex-col justify-between hover:shadow-md transition-shadow">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+              <span class="font-mono text-[9px] text-gray-400">1 ano atrás</span>
+            </div>
+            <p class="text-xs text-gray-700 leading-relaxed">"Honestidade e atendimento impecável. Fico feliz de ter ainda profissionais desse nível para nos atender na região de Navegantes."</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-navy-100">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-navy-900 text-white font-display font-medium text-[10px] flex items-center justify-center">JS</div>
+              <div>
+                <h4 class="font-display font-bold text-xs text-navy-950">Joel Nestor da Silva</h4>
+                <span class="text-[8px] font-mono text-accent-sky bg-navy-900 px-1.5 py-0.5 rounded font-black inline-block mt-0.5">Cliente Verificado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. SEÇÃO DE AGENDAMENTO (MOBILE OTIMIZADO) ================= -->
+  <section id="agendar" class="py-12 md:py-24 bg-navy-950 text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start text-left">
+        <div class="lg:col-span-5 space-y-5">
+          <span class="font-mono text-[10px] font-black tracking-widest text-accent-sky bg-sky-500/10 px-3 py-1 rounded-full uppercase">
+            RESERVE PELO SITE
+          </span>
+          <h2 class="font-display text-2xl md:text-4xl font-extrabold tracking-tight">
+            Pré-Agende seu Horário
+          </h2>
+          <p class="text-sm text-gray-300 leading-relaxed font-sans">
+            Preencha os dados e envie uma mensagem estruturada para nosso WhatsApp.
+          </p>
+          <div class="bg-navy-900 border border-navy-850 p-4 rounded-2xl">
+            <p class="text-[10px] text-accent-sky font-bold uppercase tracking-wider">Telefone Urgente:</p>
+            <p class="font-display text-lg font-black text-white">(47) 99608-7334</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="bg-navy-900 rounded-3xl border border-navy-800 p-5 shadow-2xl">
+            <form onsubmit="handleWhatsappBookingSend(event)" class="space-y-4">
+              <h3 class="font-display font-black text-base text-white border-b border-navy-800 pb-3 flex items-center gap-2">
+                <i data-lucide="car" class="w-4 h-4 text-accent-sky"></i> Dados do Veículo
+              </h3>
+
+              <div class="grid grid-cols-2 gap-2 text-left">
+                <div>
+                  <label class="block text-[9px] font-bold text-gray-300 uppercase tracking-widest mb-1" for="car-brand">Marca:</label>
+                  <select id="car-brand" class="w-full bg-navy-950 border border-navy-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-accent-sky">
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Outros">Outra</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-[9px] font-bold text-gray-300 uppercase tracking-widest mb-1" for="car-model">Modelo:</label>
+                  <input type="text" id="car-model" placeholder="Ex: Onix" required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-accent-sky">
+                </div>
+                <div>
+                  <label class="block text-[9px] font-bold text-gray-300 uppercase tracking-widest mb-1" for="car-year">Ano:</label>
+                  <input type="number" id="car-year" min="1990" max="2027" placeholder="2018" required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-accent-sky">
+                </div>
+                <div>
+                  <label class="block text-[9px] font-bold text-gray-300 uppercase tracking-widest mb-1" for="book-service">Serviço:</label>
+                  <select id="book-service" class="w-full bg-navy-950 border border-navy-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-accent-sky">
+                    <option value="Ar Condicionado">Ar Condicionado</option>
+                    <option value="Elétrica Automotiva">Elétrica</option>
+                    <option value="Mecânica Geral">Mecânica</option>
+                    <option value="Outros Serviços">Outros</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left">
+                <div>
+                  <label class="block text-[9px] font-bold text-gray-300 uppercase tracking-widest mb-1" for="book-date">Data:</label>
+                  <input type="date" id="book-date" required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-accent-sky">
+                </div>
+                <div>
+                  <label class="block text-[9px] font-bold text-gray-300 uppercase tracking-widest mb-1" for="book-time">Horário:</label>
+                  <select id="book-time" class="w-full bg-navy-950 border border-navy-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-accent-sky">
+                    <option value="08:30">08:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="15:30">15:30</option>
+                    <option value="17:00">17:00</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left">
+                <div>
+                  <label class="block text-[9px] font-bold text-gray-300 uppercase tracking-widest mb-1" for="client-name">Seu Nome:</label>
+                  <input type="text" id="client-name" placeholder="Carlos Santos" required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-accent-sky">
+                </div>
+                <div>
+                  <label class="block text-[9px] font-bold text-gray-300 uppercase tracking-widest mb-1" for="client-phone">WhatsApp:</label>
+                  <input type="tel" id="client-phone" placeholder="(47) 99999-9999" required class="w-full bg-navy-950 border border-navy-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-accent-sky">
+                </div>
+              </div>
+
+              <div class="text-left">
+                <label class="block text-[9px] font-bold text-gray-300 uppercase tracking-widest mb-1" for="client-notes">Observações:</label>
+                <textarea id="client-notes" placeholder="Descreva o problema..." rows="2" class="w-full bg-navy-950 border border-navy-800 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-accent-sky resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3 bg-emerald-600 hover:bg-emerald-500 rounded-xl font-bold text-sm tracking-wide transition-colors flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                Agendar via WhatsApp
+              </button>
+              <p class="text-[9px] text-gray-500 text-center font-medium">Você será redirecionado para o WhatsApp oficial.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. ENDEREÇO, EXPEDIENTE E FAQs (MOBILE OTIMIZADO) ================= -->
+  <section id="localizacao" class="py-12 md:py-24 bg-navy-50 text-navy-900 border-t border-navy-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 text-left space-y-5">
+          <span class="font-mono text-[10px] font-black tracking-widest text-accent-blue bg-accent-blue/10 px-3 py-1 rounded-full uppercase">
+            ONDE ESTAMOS
+          </span>
+          <h2 class="font-display text-2xl md:text-3xl font-extrabold">Navegantes - SC</h2>
+          
+          <div class="bg-white rounded-3xl border border-navy-100 p-5 space-y-4 shadow-sm">
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-navy-100">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-navy-50 text-navy-600 flex items-center justify-center">
+                  <i data-lucide="clock" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-display font-bold text-xs">Expediente</h4>
+                  <p class="text-[10px] text-gray-400 font-medium">Segunda a Sexta</p>
+                </div>
+              </div>
+              <div id="live-status-badge" class="inline-flex items-center gap-1.5 border px-2.5 py-1 rounded-full text-[9px] font-bold bg-navy-100 text-navy-850">
+                <span id="live-status-dot" class="w-2 h-2 rounded-full bg-gray-400"></span>
+                <span id="live-status-text">Calculando...</span>
+              </div>
+            </div>
+
+            <div class="space-y-1 text-xs">
+              <p class="font-sans text-sm font-bold text-navy-950">
+                Rua José Francisco Laurindo, 1176<br>
+                São Domingos, Navegantes - SC
+              </p>
+              <div class="flex justify-between text-xs font-medium pt-1">
+                <span>Manhã:</span><strong>08:00 às 12:00</strong>
+              </div>
+              <div class="flex justify-between text-xs font-medium text-gray-400">
+                <span>Almoço:</span><span>12:00 às 13:30</span>
+              </div>
+              <div class="flex justify-between text-xs font-medium">
+                <span>Tarde:</span><strong>13:30 às 18:00</strong>
+              </div>
+            </div>
+
+            <div class="pt-1 flex flex-col sm:flex-row gap-2">
+              <a href="https://www.google.com/maps/place/Bosse+Refrigera%C3%A7%C3%A3o+El%C3%A9trica+e+Mec%C3%A2nica" target="_blank" class="flex-1 inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-navy-800 text-white font-bold text-[10px] rounded-xl py-2.5 transition-colors">
+                <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+                Rota no Google Maps
+              </a>
+              <a href="https://wa.me/5547996087334" target="_blank" class="inline-flex items-center justify-center gap-1.5 bg-white hover:bg-navy-50 text-navy-800 border border-navy-200 font-bold text-[10px] rounded-xl px-4 py-2.5 transition-colors">
+                <i data-lucide="phone-call" class="w-3.5 h-3.5"></i> Ligar
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 text-left space-y-5">
+          <span class="font-mono text-[10px] font-black tracking-widest text-accent-blue bg-accent-blue/10 px-3 py-1 rounded-full uppercase">
+            DÚVIDAS
+          </span>
+          <h2 class="font-display text-xl md:text-3xl font-extrabold">Perguntas Frequentes</h2>
+
+          <div class="space-y-2">
+            <div class="bg-white rounded-2xl border border-navy-100 overflow-hidden">
+              <button onclick="toggleFaq(1)" class="w-full p-3 text-left flex items-start justify-between gap-3 font-display font-bold text-xs text-navy-950 hover:bg-navy-50/50 tap-highlight-none">
+                <span>Frequência do filtro do ar?</span>
+                <i data-lucide="chevron-down" id="faq-chevron-1" class="w-4 h-4 text-navy-400 mt-0.5 transition-transform shrink-0"></i>
+              </button>
+              <div id="faq-content-1" class="hidden px-3 pb-3 text-[11px] text-gray-600 leading-relaxed border-t border-navy-50 pt-2 font-medium">
+                A cada 6 meses ou 10.000 km. Em regiões litorâneas, a poeira acelera a obstrução.
+              </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-navy-100 overflow-hidden">
+              <button onclick="toggleFaq(2)" class="w-full p-3 text-left flex items-start justify-between gap-3 font-display font-bold text-xs text-navy-950 hover:bg-navy-50/50 tap-highlight-none">
+                <span>Ar condicionado gasta mais combustível?</span>
+                <i data-lucide="chevron-down" id="faq-chevron-2" class="w-4 h-4 text-navy-400 mt-0.5 transition-transform shrink-0"></i>
+              </button>
+              <div id="faq-content-2" class="hidden px-3 pb-3 text-[11px] text-gray-600 leading-relaxed border-t border-navy-50 pt-2 font-medium">
+                Consome de 5% a 15% extras. Em rodovias acima de 80km/h, abrir os vidros gasta mais que o ar.
+              </div>
+            </div>
+
+            <div class="bg-white rounded-2xl border border-navy-100 overflow-hidden">
+              <button onclick="toggleFaq(3)" class="w-full p-3 text-left flex items-start justify-between gap-3 font-display font-bold text-xs text-navy-950 hover:bg-navy-50/50 tap-highlight-none">
+                <span>Diagnóstico transparente?</span>
+                <i data-lucide="chevron-down" id="faq-chevron-3" class="w-4 h-4 text-navy-400 mt-0.5 transition-transform shrink-0"></i>
+              </button>
+              <div id="faq-content-3" class="hidden px-3 pb-3 text-[11px] text-gray-600 leading-relaxed border-t border-navy-50 pt-2 font-medium">
+                Mostramos o defeito real e enviamos gravações pelo WhatsApp. Sinceridade absoluta!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. RODAPÉ (MOBILE OTIMIZADO) ================= -->
+  <footer class="bg-navy-950 text-white border-t border-navy-800">
+    <div class="max-w-7xl mx-auto px-4 py-8 md:py-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+      <div class="col-span-2 md:col-span-1 space-y-2">
+        <h3 class="font-display text-xl font-black italic text-white uppercase">BOSSE</h3>
+        <p class="text-[10px] text-gray-400 font-sans leading-relaxed">Ar condicionado, elétrica, mecânica e suspensão em Navegantes.</p>
+      </div>
+      <div class="space-y-2">
+        <h4 class="font-display font-bold text-[10px] text-accent-sky uppercase tracking-wider">Links</h4>
+        <ul class="space-y-1 text-[10px] text-gray-400 font-medium">
+          <li><a href="#inicio" class="hover:text-white transition-colors">Início</a></li>
+          <li><a href="#servicos" class="hover:text-white transition-colors">Serviços</a></li>
+          <li><a href="#avaliacoes" class="hover:text-white transition-colors">Opiniões</a></li>
+        </ul>
+      </div>
+      <div class="space-y-2">
+        <h4 class="font-display font-bold text-[10px] text-accent-sky uppercase tracking-wider">Serviços</h4>
+        <ul class="space-y-1 text-[10px] text-gray-400 font-medium">
+          <li>• Ar Condicionado</li>
+          <li>• Elétrica</li>
+          <li>• Mecânica</li>
+        </ul>
+      </div>
+      <div class="space-y-2 col-span-2 md:col-span-1">
+        <h4 class="font-display font-bold text-[10px] text-accent-sky uppercase tracking-wider">Contato</h4>
+        <p class="text-[10px] text-gray-400">
+          <a href="https://wa.me/5547996087334" class="hover:text-accent-sky font-bold">(47) 99608-7334</a><br>
+          Rua José Francisco Laurindo, 1176<br>
+          Navegantes - SC
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-navy-950/80 border-t border-navy-900 py-4 text-center text-[10px]">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-2">
+        <p class="text-gray-500 font-medium">&copy; 2026 Bosse Refrigeração Elétrica e Mecânica.</p>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-[9px] uppercase font-black text-gray-450 hover:text-white transition-all bg-navy-900 border border-navy-850 px-3 py-1.5 rounded-lg">
+          Voltar ao Topo ↑
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= 9. FLOATING WHATSAPP (OTIMIZADO) ================= -->
+  <div class="fixed bottom-4 right-4 z-50">
+    <a href="https://wa.me/5547996087334?text=Olá!%20Estou%20no%20site%20da%20Bosse%20e%20gostaria%20de%20solicitar%20um%20diagnóstico." target="_blank" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full p-3 md:px-4 md:py-3 shadow-xl shadow-emerald-950/40 transition-transform hover:scale-105 relative">
+      <i data-lucide="message-circle" class="w-5 h-5 fill-white/10 shrink-0"></i>
+      <span class="hidden md:inline font-display font-black text-xs tracking-wider uppercase">Chamar</span>
+      <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-white animate-pulse"></span>
+    </a>
+  </div>
+
+  <!-- ================= 10. JAVASCRIPT ================= -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+
+    // Mobile Accordion para serviços
+    function toggleServiceMobile(id) {
+      const content = document.getElementById('content-' + id);
+      const chevron = document.getElementById('chevron-' + id);
+      
+      if (content.classList.contains('open')) {
+        content.classList.remove('open');
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
+      } else {
+        content.classList.add('open');
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // Desktop tabs
+    function switchService(serviceId) {
+      const panels = document.querySelectorAll('.service-detail-panel');
+      panels.forEach(panel => panel.classList.add('hidden'));
+      const targetPanel = document.getElementById('details-' + serviceId);
+      if (targetPanel) targetPanel.classList.remove('hidden');
+
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(tab => {
+        tab.className = "tab-btn w-full text-left p-5 rounded-2xl transition-all duration-300 flex items-center justify-between border bg-white/60 hover:bg-white border-navy-100";
+        const iconBox = tab.querySelector('.tab-icon-box');
+        if (iconBox) iconBox.className = "tab-icon-box w-12 h-12 rounded-xl flex items-center justify-center bg-navy-50 text-navy-700 transition-all";
+        const chevron = tab.querySelector('[data-lucide="arrow-right"]');
+        if (chevron) chevron.style.color = "#d1d5db";
+      });
+
+      const activeTab = document.getElementById('tab-' + serviceId);
+      if (activeTab) {
+        activeTab.className = "tab-btn w-full text-left p-5 rounded-2xl transition-all duration-300 flex items-center justify-between border bg-white border-accent-blue/30 shadow-md ring-2 ring-accent-blue/10 translate-x-1.5";
+        const iconBox = activeTab.querySelector('.tab-icon-box');
+        if (iconBox) iconBox.className = "tab-icon-box w-12 h-12 rounded-xl flex items-center justify-center bg-navy-900 text-white transition-all";
+      }
+
+      const ctaLink = document.getElementById('service-cta-link');
+      if (ctaLink) {
+        let servText = "Ar Condicionado";
+        if (serviceId === 'eletrica') servText = "Elétrica Automotiva";
+        if (serviceId === 'mecanica') servText = "Mecânica Geral";
+        if (serviceId === 'suspensao') servText = "Suspensão Completa";
+        ctaLink.href = "https://wa.me/5547996087334?text=Olá!%20Gostaria%20de%20solicitar%20um%20diagnóstico%20de%20*" + encodeURIComponent(servText) + "*%20para%20o%20meu%20automóvel.";
+      }
+    }
+
+    // Booking form
+    function handleWhatsappBookingSend(e) {
+      e.preventDefault();
+      const brand = document.getElementById('car-brand').value;
+      const model = document.getElementById('car-model').value;
+      const year = document.getElementById('car-year').value;
+      const service = document.getElementById('book-service').value;
+      const dateVal = document.getElementById('book-date').value;
+      const timeVal = document.getElementById('book-time').value;
+      const name = document.getElementById('client-name').value;
+      const phone = document.getElementById('client-phone').value;
+      const notes = document.getElementById('client-notes').value || "Revisão preventiva";
+
+      const parts = dateVal.split('-');
+      const formattedDate = parts.length === 3 ? `${parts[2]}/${parts[1]}/${parts[0]}` : dateVal;
+
+      const msg = `Olá! Pré-agendamento pelo site:\n\n` +
+                  `🚗 ${brand} ${model} (${year})\n` +
+                  `🛠️ ${service}\n` +
+                  `📅 ${formattedDate} às ${timeVal}\n` +
+                  `👤 ${name} - ${phone}\n` +
+                  `📝 ${notes}`;
+
+      window.open("https://wa.me/5547996087334?text=" + encodeURIComponent(msg), '_blank');
+    }
+
+    // FAQ
+    function toggleFaq(faqId) {
+      const panel = document.getElementById('faq-content-' + faqId);
+      const chevron = document.getElementById('faq-chevron-' + faqId);
+      if (panel.classList.contains('hidden')) {
+        panel.classList.remove('hidden');
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+      } else {
+        panel.classList.add('hidden');
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    // Review form
+    function toggleReviewForm() {
+      document.getElementById('add-review-wrapper').classList.toggle('hidden');
+    }
+
+    function submitLocalReview(e) {
+      e.preventDefault();
+      const author = document.getElementById('rev-author').value;
+      const role = document.getElementById('rev-role').value;
+      const starsNum = parseInt(document.getElementById('rev-stars').value);
+      const text = document.getElementById('rev-text').value;
+      const initials = author.substring(0, 2).toUpperCase();
+      let starsString = "";
+      for (let i = 0; i < starsNum; i++) starsString += "★ ";
+
+      const reviewHTML = `
+        <div class="bg-navy-50/50 rounded-2xl border border-navy-100 p-4 text-left flex flex-col justify-between hover:shadow-md transition-shadow fade-in">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="text-amber-500 text-[10px]">${starsString}</div>
+              <span class="font-mono text-[9px] text-gray-400">Agora mesmo</span>
+            </div>
+            <p class="text-xs text-gray-700 leading-relaxed font-semibold">"${text}"</p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-navy-100 flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-navy-900 text-white font-display font-medium text-[10px] flex items-center justify-center">${initials}</div>
+            <div>
+              <h4 class="font-display font-bold text-xs text-navy-950">${author}</h4>
+              <span class="text-[8px] font-mono text-accent-sky bg-navy-900 px-1.5 py-0.5 rounded font-black inline-block mt-0.5">${role}</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('reviews-grid').insertAdjacentHTML('afterbegin', reviewHTML);
+      document.getElementById('rev-author').value = "";
+      document.getElementById('rev-role').value = "";
+      document.getElementById('rev-text').value = "";
+      toggleReviewForm();
+    }
+
+    // Live status
+    function calculateRealTimeOpenStatus() {
+      const now = new Date();
+      const day = now.getDay();
+      const totalMinutes = now.getHours() * 60 + now.getMinutes();
+      const startMorning = 8 * 60, endMorning = 12 * 60;
+      const startAfternoon = 13 * 60 + 30, endAfternoon = 18 * 60;
+      const badge = document.getElementById('live-status-badge');
+      const dot = document.getElementById('live-status-dot');
+      const text = document.getElementById('live-status-text');
+      const isWeekday = day >= 1 && day <= 5;
+
+      if (!isWeekday) {
+        badge.className = "inline-flex items-center gap-1.5 border px-2.5 py-1 rounded-full text-[9px] font-bold bg-red-500/15 text-red-600 border-red-500/20";
+        dot.className = "w-2 h-2 rounded-full bg-red-500";
+        text.innerText = "Fechado";
+        return;
+      }
+
+      if (totalMinutes >= startMorning && totalMinutes < endMorning) {
+        badge.className = "inline-flex items-center gap-1.5 border px-2.5 py-1 rounded-full text-[9px] font-bold bg-emerald-500/15 text-emerald-600 border-emerald-500/20";
+        dot.className = "w-2 h-2 rounded-full bg-emerald-500 animate-pulse";
+        text.innerText = "Aberto agora";
+      } else if (totalMinutes >= endMorning && totalMinutes < startAfternoon) {
+        badge.className = "inline-flex items-center gap-1.5 border px-2.5 py-1 rounded-full text-[9px] font-bold bg-amber-500/15 text-amber-600 border-amber-500/20";
+        dot.className = "w-2 h-2 rounded-full bg-amber-500";
+        text.innerText = "Almoço";
+      } else if (totalMinutes >= startAfternoon && totalMinutes < endAfternoon) {
+        badge.className = "inline-flex items-center gap-1.5 border px-2.5 py-1 rounded-full text-[9px] font-bold bg-emerald-500/15 text-emerald-600 border-emerald-500/20";
+        dot.className = "w-2 h-2 rounded-full bg-emerald-500 animate-pulse";
+        text.innerText = "Aberto agora";
+      } else {
+        badge.className = "inline-flex items-center gap-1.5 border px-2.5 py-1 rounded-full text-[9px] font-bold bg-red-500/15 text-red-600 border-red-500/20";
+        dot.className = "w-2 h-2 rounded-full bg-red-500";
+        text.innerText = "Fechado";
+      }
+    }
+
+    calculateRealTimeOpenStatus();
+    setInterval(calculateRealTimeOpenStatus, 60000);
+  </script>
+</body>
+</html>
